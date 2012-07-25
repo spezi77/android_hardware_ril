@@ -36,6 +36,10 @@ LOCAL_MODULE:= libril
 LOCAL_COPY_HEADERS_TO := libril
 LOCAL_COPY_HEADERS := ril_ex.h
 
+ifeq ($(BOARD_USES_LEGACY_RIL),true)
+LOCAL_CFLAGS += -DLEGACY_RIL
+endif
+
 include $(BUILD_SHARED_LIBRARY)
 
 
